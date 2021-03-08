@@ -1,5 +1,5 @@
 package id.bmri.introduction.be.day2.beintroductionday2.controller;
-import id.bmri.introduction.be.day2.beintroductionday2.Service.StudentServiceImpl;
+import id.bmri.introduction.be.day2.beintroductionday2.Service.impl.StudentServiceImpl;
 import id.bmri.introduction.be.day2.beintroductionday2.model.request.StudentRequest;
 import id.bmri.introduction.be.day2.beintroductionday2.model.request.StudentSearchMajorAndGradeRequest;
 import id.bmri.introduction.be.day2.beintroductionday2.model.response.StudentDto;
@@ -11,7 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RequestMapping("api/student")

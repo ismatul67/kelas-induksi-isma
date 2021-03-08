@@ -1,6 +1,5 @@
 package id.bmri.introduction.be.day2.beintroductionday2.configuration;
 
-import id.bmri.introduction.be.day2.beintroductionday2.Service.StudentServiceImpl;
 import id.bmri.introduction.be.day2.beintroductionday2.model.response.StudentDto;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,5 +1,6 @@
-package id.bmri.introduction.be.day2.beintroductionday2.Service;
+package id.bmri.introduction.be.day2.beintroductionday2.Service.impl;
 
+import id.bmri.introduction.be.day2.beintroductionday2.Service.StudentService;
 import id.bmri.introduction.be.day2.beintroductionday2.model.request.StudentRequest;
 import id.bmri.introduction.be.day2.beintroductionday2.model.request.StudentSearchMajorAndGradeRequest;
 import id.bmri.introduction.be.day2.beintroductionday2.model.response.StudentDto;
