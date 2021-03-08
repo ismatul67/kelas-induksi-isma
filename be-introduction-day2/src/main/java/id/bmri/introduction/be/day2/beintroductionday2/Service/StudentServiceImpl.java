@@ -46,15 +46,23 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<StudentDto> findAll() {
-        return this.students;
+        List<StudentDto> studentList = new ArrayList<>();
+        for (StudentDto student : this.students) {
+            if (student.isDelete()==false) {
+                    studentList.add(student);
+            }
+        }
+        return studentList;
     }
 
     @Override
     public StudentDto getStudentByName(String name) {
         StudentDto findStudent = null;
         for (StudentDto student : students) {
-            if (student.getName().compareToIgnoreCase(name) == 0) {
-                findStudent = student;
+            if (student.isDelete()==false) {
+                if (student.getName().compareToIgnoreCase(name) == 0) {
+                    findStudent = student;
+                }
             }
         }
 
@@ -65,9 +73,11 @@ public class StudentServiceImpl implements StudentService {
     public List<StudentDto> getStudentsByGradeAndMajor(StudentSearchMajorAndGradeRequest studentSearchRequest) {
         List<StudentDto> studentList = new ArrayList<>();
         for (StudentDto student : students) {
-            if (student.getGrade() == studentSearchRequest.getGrade()) {
-                if (student.getMajor().compareToIgnoreCase(studentSearchRequest.getMajor()) == 0) {
-                    studentList.add(student);
+            if (student.isDelete()==false) {
+                if (student.getGrade() == studentSearchRequest.getGrade()) {
+                    if (student.getMajor().compareToIgnoreCase(studentSearchRequest.getMajor()) == 0) {
+                        studentList.add(student);
+                    }
                 }
             }
         }
@@ -79,8 +89,10 @@ public class StudentServiceImpl implements StudentService {
     public List<StudentDto> getStudentsByGrade(Integer grade) {
         List<StudentDto> studentList = new ArrayList<>();
         for (StudentDto student : students) {
-            if (student.getGrade() == grade) {
+            if (student.isDelete()==false) {
+                if (student.getGrade() == grade) {
                     studentList.add(student);
+                }
             }
         }
         return studentList;    }
@@ -89,9 +101,11 @@ public class StudentServiceImpl implements StudentService {
     public List<StudentDto> getStudentsByMajor(String major) {
         List<StudentDto> studentList = new ArrayList<>();
         for (StudentDto student : students) {
+            if (student.isDelete()==false) {
                 if (student.getMajor().compareToIgnoreCase(major) == 0) {
                     studentList.add(student);
                 }
+            }
         }
         return studentList;    }
 

@@ -14,7 +14,7 @@ public class AppConfiguration {
 
     @Bean(name = "student")
     public StudentDto studentDto() {
-        return new StudentDto((long) 1, 12, "Science",true, new Date(), 23, "Isma");
+        return new StudentDto((long) 1, 12, "Science",false, new Date(), 23, "Isma");
     }
 
     @Bean(name="students")
